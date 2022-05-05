@@ -458,15 +458,33 @@ Check
                   TU@{i si}
                   TU@{i si}
                   (
-                    fun B : TU@{i si} =>
+                    FB0@{si}
+                      TU@{i si}
+                      TU@{i si}
+                      (
+                        TP0@{si}
+                          TU@{i si}
+                          TU@{i si}
+                      )
                       TP0@{i}
-                        B
+                      (
+                        FI@{si}
+                          TU@{i si}
+                      )
                   )
                   (
-                    fun B : TU@{i si} =>
-                      TP0@{i}
-                        A
-                        B
+                    FB0@{si}
+                      TU@{i si}
+                      TU@{i si}
+                      TU@{i si}
+                      (
+                        TP0@{i}
+                          A
+                      )
+                      (
+                        FI@{si}
+                          TU@{i si}
+                      )
                   )
               )
         )
