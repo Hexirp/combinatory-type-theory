@@ -381,7 +381,7 @@ Check
         TU@{i si}
         (
           fun A : TU@{i si} =>
-            TP0@{si}
+            TP0@{i}
               A
               A
         )
@@ -432,13 +432,42 @@ Check
               TU@{i si}
               (
                 fun B : TU@{i si} =>
-                  TP0@{si}
+                  TP0@{i}
                     B
                     (
-                      TP0@{si}
+                      TP0@{i}
                         A
                         B
                     )
+              )
+        )
+.
+
+Check
+  FK@{i}
+    :
+      TP1@{si}
+        TU@{i si}
+        (
+          fun A : TU@{i si} =>
+            TP1@{si}
+              TU@{i si}
+              (
+                FS0@{si}
+                  TU@{i si}
+                  TU@{i si}
+                  TU@{i si}
+                  (
+                    fun B : TU@{i si} =>
+                      TP0@{i}
+                        B
+                  )
+                  (
+                    fun B : TU@{i si} =>
+                      TP0@{i}
+                        A
+                        B
+                  )
               )
         )
 .
