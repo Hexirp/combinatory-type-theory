@@ -392,31 +392,55 @@ Check
     :
       P1@{si}
         T@{i si}
-          (
-            S0@{si}
-              T@{i si}
-              T@{i si}
+        (
+          S0@{si}
+            T@{i si}
+            T@{i si}
+            T@{i si}
+            (
+              B0@{si}
+                T@{i si}
+                T@{i si}
+                (
+                  P0@{si}
+                  T@{i si}
+                  T@{i si}
+                )
+                P0@{i}
+                (
+                  I@{si}
+                    T@{i si}
+                )
+            )
+            (
+              I@{si}
+                T@{i si}
+            )
+        )
+.
+
+Check K@{i}.
+
+Check
+  K@{i}
+    :
+      P1@{si}
+        T@{i si}
+        (
+          fun A : T@{i si} =>
+            P1@{si}
               T@{i si}
               (
-                B0@{si}
-                  T@{i si}
-                  T@{i si}
-                  (
-                    P0@{si}
-                    T@{i si}
-                    T@{i si}
-                  )
-                  P0@{i}
-                  (
-                    I@{si}
-                      T@{i si}
-                  )
+                fun B : T@{i si} =>
+                  P0@{si}
+                    B
+                    (
+                      P0@{si}
+                        A
+                        B
+                    )
               )
-              (
-                I@{si}
-                  T@{i si}
-              )
-          )
+        )
 .
 
 End Assertion.
