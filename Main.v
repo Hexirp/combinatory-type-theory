@@ -41,26 +41,26 @@ Notation
     (at level 99, right associativity, y at level 200)
 .
 
-(** [I] を定義します。 *)
+(** [FI] を定義します。 *)
 
 Definition
-  I@{i | }
+  FI@{i | }
     : forall A : Type@{i}, A -> A
     := fun A : Type@{i} => fun x : A => x
 .
 
-(** [K] を定義します。 *)
+(** [FK] を定義します。 *)
 
 Definition
-  K@{i | }
+  FK@{i | }
     : forall A : Type@{i}, forall B : Type@{i}, B -> A -> B
     := fun A : Type@{i} => fun B : Type@{i} => fun y : B => fun x : A => y
 .
 
-(** [B0] を定義します。 *)
+(** [FB0] を定義します。 *)
 
 Definition
-  B0@{i | }
+  FB0@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -76,10 +76,10 @@ Definition
                   z (y x)
 .
 
-(** [B1] を定義します。 *)
+(** [FB1] を定義します。 *)
 
 Definition
-  B1@{i | }
+  FB1@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -99,10 +99,10 @@ Definition
                   z (y x)
 .
 
-(** [C0] を定義します。 *)
+(** [FC0] を定義します。 *)
 
 Definition
-  C0@{i | }
+  FC0@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -118,10 +118,10 @@ Definition
                   z x y
 .
 
-(** [C1] を定義します。 *)
+(** [FC1] を定義します。 *)
 
 Definition
-  C1@{i | }
+  FC1@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -140,10 +140,10 @@ Definition
                   z x y
 .
 
-(** [C2] を定義します。 *)
+(** [FC2] を定義します。 *)
 
 Definition
-  C2@{i | }
+  FC2@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -164,10 +164,10 @@ Definition
                   z x y
 .
 
-(** [C3] を定義します。 *)
+(** [FC3] を定義します。 *)
 
 Definition
-  C3@{i | }
+  FC3@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -187,10 +187,10 @@ Definition
                   z x y
 .
 
-(** [S0] を定義します。 *)
+(** [FS0] を定義します。 *)
 
 Definition
-  S0@{i | }
+  FS0@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -206,10 +206,10 @@ Definition
                   z x (y x)
 .
 
-(** [S1] を定義します。 *)
+(** [FS1] を定義します。 *)
 
 Definition
-  S1@{i | }
+  FS1@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -229,10 +229,10 @@ Definition
                   z x (y x)
 .
 
-(** [S2] を定義します。 *)
+(** [FS2] を定義します。 *)
 
 Definition
-  S2@{i | }
+  FS2@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -253,10 +253,10 @@ Definition
                   z x (y x)
 .
 
-(** [S3] を定義します。 *)
+(** [FS3] を定義します。 *)
 
 Definition
-  S3@{i | }
+  FS3@{i | }
     :
       forall A : Type@{i},
         forall B : Type@{i},
@@ -276,10 +276,10 @@ Definition
                   z x (y x)
 .
 
-(** [S4] を定義します。 *)
+(** [FS4] を定義します。 *)
 
 Definition
-  S4@{i | }
+  FS4@{i | }
     :
       forall A : Type@{i},
         forall B : A -> Type@{i},
@@ -295,10 +295,10 @@ Definition
                   z x (y x)
 .
 
-(** [S6] を定義します。 *)
+(** [FS6] を定義します。 *)
 
 Definition
-  S6@{i | }
+  FS6@{i | }
     :
       forall A : Type@{i},
         forall B : A -> Type@{i},
@@ -319,10 +319,10 @@ Definition
                   z x (y x)
 .
 
-(** [S7] を定義します。 *)
+(** [FS7] を定義します。 *)
 
 Definition
-  S7@{i | }
+  FS7@{i | }
     :
       forall A : Type@{i},
         forall B : A -> Type@{i},
@@ -342,26 +342,26 @@ Definition
                   z x (y x)
 .
 
-(** [T] を定義します。 *)
+(** [TU] を定義します。 *)
 
 Definition
-  T@{i si | i < si}
+  TU@{i si | i < si}
     : Type@{si}
     := Type@{i}
 .
 
-(** [P0] を定義します。 *)
+(** [TP0] を定義します。 *)
 
 Definition
-  P0@{i | }
+  TP0@{i | }
     : Type@{i} -> Type@{i} -> Type@{i}
     := fun A : Type@{i} => fun B : Type@{i} => A -> B
 .
 
-(** [P1] を定義します。 *)
+(** [TP1] を定義します。 *)
 
 Definition
-  P1@{i | }
+  TP1@{i | }
     : forall A : Type@{i}, (A -> Type@{i}) -> Type@{i}
     := fun A : Type@{i} => fun B : A -> Type@{i} => forall x : A, B x
 .
@@ -372,70 +372,70 @@ Universe i si.
 
 Constraint i < si.
 
-Check I@{i}.
+Check FI@{i}.
 
 Check
-  I@{i}
+  FI@{i}
     :
-      P1@{si}
-        T@{i si}
+      TP1@{si}
+        TU@{i si}
         (
-          fun A : T@{i si} =>
-            P0@{si}
+          fun A : TU@{i si} =>
+            TP0@{si}
               A
               A
         )
 .
 
 Check
-  I@{i}
+  FI@{i}
     :
-      P1@{si}
-        T@{i si}
+      TP1@{si}
+        TU@{i si}
         (
-          S0@{si}
-            T@{i si}
-            T@{i si}
-            T@{i si}
+          FS0@{si}
+            TU@{i si}
+            TU@{i si}
+            TU@{i si}
             (
-              B0@{si}
-                T@{i si}
-                T@{i si}
+              FB0@{si}
+                TU@{i si}
+                TU@{i si}
                 (
-                  P0@{si}
-                  T@{i si}
-                  T@{i si}
+                  TP0@{si}
+                    TU@{i si}
+                    TU@{i si}
                 )
-                P0@{i}
+                TP0@{i}
                 (
-                  I@{si}
-                    T@{i si}
+                  FI@{si}
+                    TU@{i si}
                 )
             )
             (
-              I@{si}
-                T@{i si}
+              FI@{si}
+                TU@{i si}
             )
         )
 .
 
-Check K@{i}.
+Check FK@{i}.
 
 Check
-  K@{i}
+  FK@{i}
     :
-      P1@{si}
-        T@{i si}
+      TP1@{si}
+        TU@{i si}
         (
-          fun A : T@{i si} =>
-            P1@{si}
-              T@{i si}
+          fun A : TU@{i si} =>
+            TP1@{si}
+              TU@{i si}
               (
-                fun B : T@{i si} =>
-                  P0@{si}
+                fun B : TU@{i si} =>
+                  TP0@{si}
                     B
                     (
-                      P0@{si}
+                      TP0@{si}
                         A
                         B
                     )
