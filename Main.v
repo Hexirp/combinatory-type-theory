@@ -382,12 +382,8 @@ Check
         (
           fun A : T@{i si} =>
             P0@{si}
-              (
-                P0@{si}
-                  A
-                  T@{i si}
-              )
-              T@{i si}
+              A
+              A
         )
 .
 
