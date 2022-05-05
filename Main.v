@@ -61,104 +61,285 @@ Definition
 
 Definition
   B0@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : Type@{i}, (B -> C) -> (A -> B) -> A -> C
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : Type@{i} => fun z : B -> C => fun y : A -> B => fun x : A => z (y x)
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : Type@{i},
+            (B -> C) -> (A -> B) -> A -> C
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : Type@{i} =>
+            fun z : B -> C =>
+              fun y : A -> B =>
+                fun x : A =>
+                  z (y x)
 .
 
 (** [B1] を定義します。 *)
 
 Definition
   B1@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : B -> Type@{i}, (forall y : B, C y) -> forall y : A -> B, forall x : A, C (y x)
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : B -> Type@{i} => fun z : forall y : B, C y => fun y : A -> B => fun x : A => z (y x)
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : B -> Type@{i},
+            (forall y : B, C y)
+              ->
+                forall y : A -> B,
+                  forall x : A,
+                    C (y x)
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : B -> Type@{i} =>
+            fun z : forall y : B, C y =>
+              fun y : A -> B =>
+                fun x : A =>
+                  z (y x)
 .
 
 (** [C0] を定義します。 *)
 
 Definition
   C0@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : Type@{i}, (A -> B -> C) -> B -> A -> C
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : Type@{i} => fun z : A -> B -> C => fun y : B => fun x : A => z x y
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : Type@{i},
+            (A -> B -> C) -> B -> A -> C
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : Type@{i} =>
+            fun z : A -> B -> C =>
+              fun y : B =>
+                fun x : A =>
+                  z x y
 .
 
 (** [C1] を定義します。 *)
 
 Definition
   C1@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : B -> Type@{i}, (A -> forall y : B, C y) -> forall y : B, A -> C y
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : B -> Type@{i} => fun z : A -> forall y : B, C y => fun y : B => fun x : A => z x y
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : B -> Type@{i},
+            (A -> forall y : B, C y)
+              ->
+                forall y : B,
+                  A -> C y
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : B -> Type@{i} =>
+            fun z : A -> forall y : B, C y =>
+              fun y : B =>
+                fun x : A =>
+                  z x y
 .
 
 (** [C2] を定義します。 *)
 
 Definition
   C2@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : A -> Type@{i}, (forall x : A, B -> C x) -> B -> forall x : A, C x
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : A -> Type@{i} => fun z : forall x : A, B -> C x => fun y : B => fun x : A => z x y
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : A -> Type@{i},
+            (forall x : A, B -> C x)
+              ->
+                B
+                  ->
+                    forall x : A,
+                      C x
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : A -> Type@{i} =>
+            fun z : forall x : A, B -> C x =>
+              fun y : B =>
+                fun x : A =>
+                  z x y
 .
 
 (** [C3] を定義します。 *)
 
 Definition
   C3@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : A -> B -> Type@{i}, (forall x : A, forall y : B, C x y) -> forall y : B, forall x : A, C x y
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : A -> B -> Type@{i} => fun z : forall x : A, forall y : B, C x y => fun y : B => fun x : A => z x y
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : A -> B -> Type@{i},
+            (forall x : A, forall y : B, C x y)
+              ->
+                forall y : B,
+                  forall x : A,
+                    C x y
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : A -> B -> Type@{i} =>
+            fun z : forall x : A, forall y : B, C x y =>
+              fun y : B =>
+                fun x : A =>
+                  z x y
 .
 
 (** [S0] を定義します。 *)
 
 Definition
   S0@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : Type@{i}, (A -> B -> C) -> (A -> B) -> A -> C
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : Type@{i} => fun z : A -> B -> C => fun y : A -> B => fun x : A => z x (y x)
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : Type@{i},
+            (A -> B -> C) -> (A -> B) -> A -> C
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : Type@{i} =>
+            fun z : A -> B -> C =>
+              fun y : A -> B =>
+                fun x : A =>
+                  z x (y x)
 .
 
 (** [S1] を定義します。 *)
 
 Definition
   S1@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : B -> Type@{i}, (A -> forall y : B, C y) -> forall y : A -> B, forall x : A, C (y x)
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : B -> Type@{i} => fun z : A -> forall y : B, C y => fun y : A -> B => fun x : A => z x (y x)
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : B -> Type@{i},
+            (A -> forall y : B, C y)
+              ->
+                forall y : A -> B,
+                  forall x : A,
+                    C (y x)
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : B -> Type@{i} =>
+            fun z : A -> forall y : B, C y =>
+              fun y : A -> B =>
+                fun x : A =>
+                  z x (y x)
 .
 
 (** [S2] を定義します。 *)
 
 Definition
   S2@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : A -> Type@{i}, (forall x : A, B -> C x) -> (A -> B) -> forall x : A, C x
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : A -> Type@{i} => fun z : forall x : A, B -> C x => fun y : A -> B => fun x : A => z x (y x)
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : A -> Type@{i},
+            (forall x : A, B -> C x)
+              ->
+                (A -> B)
+                  ->
+                    forall x : A,
+                      C x
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : A -> Type@{i} =>
+            fun z : forall x : A, B -> C x =>
+              fun y : A -> B =>
+                fun x : A =>
+                  z x (y x)
 .
 
 (** [S3] を定義します。 *)
 
 Definition
   S3@{i | }
-    : forall A : Type@{i}, forall B : Type@{i}, forall C : A -> B -> Type@{i}, (forall x : A, forall y : B, C x y) -> forall y : A -> B, forall x : A, C x (y x)
-    := fun A : Type@{i} => fun B : Type@{i} => fun C : A -> B -> Type@{i} => fun z : forall x : A, forall y : B, C x y => fun y : A -> B => fun x : A => z x (y x)
+    :
+      forall A : Type@{i},
+        forall B : Type@{i},
+          forall C : A -> B -> Type@{i},
+            (forall x : A, forall y : B, C x y)
+              ->
+                forall y : A -> B,
+                  forall x : A,
+                    C x (y x)
+    :=
+      fun A : Type@{i} =>
+        fun B : Type@{i} =>
+          fun C : A -> B -> Type@{i} =>
+            fun z : forall x : A, forall y : B, C x y =>
+              fun y : A -> B =>
+                fun x : A =>
+                  z x (y x)
 .
 
 (** [S4] を定義します。 *)
 
 Definition
   S4@{i | }
-    : forall A : Type@{i}, forall B : A -> Type@{i}, forall C : Type@{i}, (forall x : A, B x -> C) -> (forall x : A, B x) -> A -> C
-    := fun A : Type@{i} => fun B : A -> Type@{i} => fun C : Type@{i} => fun z : forall x : A, B x -> C => fun y : forall x : A, B x => fun x : A => z x (y x)
+    :
+      forall A : Type@{i},
+        forall B : A -> Type@{i},
+          forall C : Type@{i},
+            (forall x : A, B x -> C) -> (forall x : A, B x) -> A -> C
+    :=
+      fun A : Type@{i} =>
+        fun B : A -> Type@{i} =>
+          fun C : Type@{i} =>
+            fun z : forall x : A, B x -> C =>
+              fun y : forall x : A, B x =>
+                fun x : A =>
+                  z x (y x)
 .
 
 (** [S6] を定義します。 *)
 
 Definition
   S6@{i | }
-    : forall A : Type@{i}, forall B : A -> Type@{i}, forall C : A -> Type@{i}, (forall x : A, B x -> C x) -> (forall x : A, B x) -> forall x : A, C x
-    := fun A : Type@{i} => fun B : A -> Type@{i} => fun C : A -> Type@{i} => fun z : forall x : A, B x -> C x => fun y : forall x : A, B x => fun x : A => z x (y x)
+    :
+      forall A : Type@{i},
+        forall B : A -> Type@{i},
+          forall C : A -> Type@{i},
+            (forall x : A, B x -> C x)
+              ->
+                (forall x : A, B x)
+                  ->
+                    forall x : A,
+                      C x
+    :=
+      fun A : Type@{i} =>
+        fun B : A -> Type@{i} =>
+          fun C : A -> Type@{i} =>
+            fun z : forall x : A, B x -> C x =>
+              fun y : forall x : A, B x =>
+                fun x : A =>
+                  z x (y x)
 .
 
 (** [S7] を定義します。 *)
 
 Definition
   S7@{i | }
-    : forall A : Type@{i}, forall B : A -> Type@{i}, forall C : forall x : A, B x -> Type@{i}, (forall x : A, forall y : B x, C x y) -> forall y : forall x : A, B x, forall x : A, C x (y x)
-    := fun A : Type@{i} => fun B : A -> Type@{i} => fun C : forall x : A, B x -> Type@{i} => fun z : forall x : A, forall y : B x, C x y => fun y : forall x : A, B x => fun x : A => z x (y x)
+    :
+      forall A : Type@{i},
+        forall B : A -> Type@{i},
+          forall C : forall x : A, B x -> Type@{i},
+            (forall x : A, forall y : B x, C x y)
+              ->
+                forall y : forall x : A, B x,
+                  forall x : A,
+                    C x (y x)
+    :=
+      fun A : Type@{i} =>
+        fun B : A -> Type@{i} =>
+          fun C : forall x : A, B x -> Type@{i} =>
+            fun z : forall x : A, forall y : B x, C x y =>
+              fun y : forall x : A, B x =>
+                fun x : A =>
+                  z x (y x)
 .
 
 (** [T] を定義します。 *)
@@ -191,6 +372,55 @@ Universe i si.
 
 Constraint i < si.
 
-Check I@{i} : P1@{si} T@{i si} (S0@{si} T@{i si} T@{i si} T@{i si} (B0@{si} T@{i si} T@{i si} (P0@{si} T@{i si} T@{i si}) P0@{i} (I@{si} T@{i si})) (I@{si} T@{i si})).
+Check I@{i}.
+
+Check
+  I@{i}
+    :
+      P1@{si}
+        T@{i si}
+        (
+          fun A : T@{i si} =>
+            P0@{si}
+              (
+                P0@{si}
+                  A
+                  T@{i si}
+              )
+              T@{i si}
+        )
+.
+
+Check
+  I@{i}
+    :
+      P1@{si}
+        T@{i si}
+          (
+            S0@{si}
+              T@{i si}
+              T@{i si}
+              T@{i si}
+              (
+                B0@{si}
+                  T@{i si}
+                  T@{i si}
+                  (
+                    P0@{si}
+                    T@{i si}
+                    T@{i si}
+                  )
+                  P0@{i}
+                  (
+                    I@{si}
+                      T@{i si}
+                  )
+              )
+              (
+                I@{si}
+                  T@{i si}
+              )
+          )
+.
 
 End Assertion.
